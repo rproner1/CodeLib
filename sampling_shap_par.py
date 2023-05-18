@@ -2,7 +2,8 @@ import numpy as np
 from joblib import delayed, Parallel
 
 
-def mc_shapley_value_par(estimator, feature_index, instance_index, X, n_iters, n_jobs=-1, lstm=False):
+def mc_shapley_value_par(estimator, feature_index, instance_index, X, n_iters, n_jobs=-1):
+
     
     """
     Estimates shapley value of feature 'feature_index', for instance 'instance_index', under the estimator provided.
@@ -96,3 +97,5 @@ def mc_shapley_value_par(estimator, feature_index, instance_index, X, n_iters, n
     shapley_value = np.mean(marginal_contributions, axis=ax)
     
     return shapley_value
+
+    
